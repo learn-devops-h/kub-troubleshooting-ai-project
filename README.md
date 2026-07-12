@@ -1,14 +1,21 @@
-AI Kubernetes Troubleshooting Agent - High Level Design (HLD)
-Goal
+# AI Kubernetes Troubleshooting Agent - High Level Design (HLD)
+
+## Goal
+
 Build an AI-powered Kubernetes troubleshooting platform that can:
 
-Investigate Kubernetes failures
-Analyze logs, events, and cluster state
-Identify root causes
-Suggest fixes
-Store investigation history
-Be deployed publicly as a real application
-High Level Architecture
+- Investigate Kubernetes failures
+- Analyze logs, events, and cluster state
+- Identify root causes
+- Suggest fixes
+- Store investigation history
+- Be deployed publicly as a real application
+
+---
+
+# High Level Architecture
+
+```text
 ┌────────────────────────────────────────────────────────────┐
 │                    Kubernetes Cluster                     │
 │                                                            │
@@ -165,7 +172,11 @@ High Level Architecture
 │                                                            │
 │ Enables public access to the troubleshooting platform      │
 └────────────────────────────────────────────────────────────┘
-End-to-End Workflow
+```
+
+# End-to-End Workflow
+
+```text
 User clicks "Investigate Cluster"
                 │
                 ▼
@@ -210,7 +221,11 @@ Frontend Receives Result
                 │
                 ▼
 User sees Diagnosis
-Example Failure Flow
+```
+
+# Example Failure Flow
+
+```text
 Issue:
 Payment service unavailable
 
@@ -234,14 +249,20 @@ Update deployment.yaml and add secret reference
 
 Prevention:
 Add startup validation checks
-Supported Kubernetes Problems
-CrashLoopBackOff
-ImagePullBackOff
-OOMKilled
-Pending Pods
-Resource Exhaustion
-Deployment Rollout Failures
-Service Selector Mismatch
-DNS Resolution Problems
-Readiness/Liveness Probe Failures
-Networking Issues
+```
+
+## Supported Kubernetes Problems
+
+- CrashLoopBackOff
+- ImagePullBackOff
+- OOMKilled
+- Pending Pods
+- Resource Exhaustion
+- Deployment Rollout Failures
+- Service Selector Mismatch
+- DNS Resolution Problems
+- Readiness/Liveness Probe Failures
+- Networking Issues
+
+```
+
